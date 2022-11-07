@@ -77,12 +77,17 @@ export default {
   .swipe {
     width: 100%;
     height: 4rem;
-    padding: 0 0.2rem;
+    padding-left: 0.2rem;
     .van-swipe-item {
+      padding-right: 0.2rem;
       position: relative;
+      height: 3.8rem;
+
       .swipePic {
-        width: 3rem;
-        height: 150px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 3rem;
         border-radius: 0.2rem;
       }
       .playCount {
@@ -106,8 +111,6 @@ export default {
         }
       }
       .name {
-        display: block;
-        width: 3rem;
         color: #000;
       }
     }

@@ -28,12 +28,12 @@
           <img :src="playlist.coverImgUrl" alt="" />
         </div>
         <div class="cright">
-          <p>1</p>
+          <p>{{ playlist.name }}</p>
           <div>
-            <img src="" alt="" />
-            <span></span>
+            <img :src="playlist.creator.backgroundUrl" alt="" class="rightimg" />
+            <span>{{ playlist.creator.nickname }}</span>
           </div>
-          <p>3</p>
+          <p>{{ playlist.description }}</p>
         </div>
       </div>
       <!-- 顶部尾部 -->
@@ -46,6 +46,8 @@
 <script>
 export default {
   setup(props) {
+    // 通过props进行传值，判断如果数据拿不到，就获取sessionStorage中的
+    props.playlist.creator = ''
     console.log(props)
   },
   props: ['playlist']
@@ -94,7 +96,15 @@ export default {
       }
     }
     .cright {
-      padding: 1.3rem 2rem 0 0;
+      height: 2.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .rightimg {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+      }
     }
   }
 }
